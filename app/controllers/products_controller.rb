@@ -8,14 +8,14 @@ class ProductsController < ApplicationController
   def show 
     product_id = params["id"]
     product = Product.find_by(id: product_id)
-    render json: product.as_json
+    render json: product.as_json(methods: [:friendly_created_at, :tax, :total])
   end 
 
   def create 
     product = Product.new( 
       name: params[:name], 
       price: params[:price],
-      img_url: params[:img_url],
+      image_url: params[:image_url],
       description: params[:description]
     )
     product.save
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
 
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
-    product.img_url = params[:img_url] || product.img_url
+    product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
 
     product.save 
