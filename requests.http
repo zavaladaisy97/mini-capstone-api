@@ -1,14 +1,14 @@
-GET http://localhost:3000/products 
+GET http://localhost:3000/products.json
 
 ### Show Action
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/1.json
 
 ### Create Action
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "phone",
+  "name": "ice cream",
   "price": 1000,
   "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUw4BRSv5KYO47illBY6pKjupBnnqXFEyluI3--QTAh3fU0whERswkeKRi2Bxw6817_Y&usqp=CAU",
   "description": "call and text; use internet services"

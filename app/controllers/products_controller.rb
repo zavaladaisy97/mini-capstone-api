@@ -1,14 +1,13 @@
 class ProductsController < ApplicationController
   
   def index
-    products = Product.all
-    render json: products.as_json
+    @products = Product.all
+    render template: "products/index"
   end 
 
   def show 
-    product_id = params["id"]
-    product = Product.find_by(id: product_id)
-    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?, :tax, :total])
+    @product = Product.find_by(id: product_id)
+    render template: "products/show"
   end 
 
   def create 
@@ -19,11 +18,11 @@ class ProductsController < ApplicationController
       description: params[:description]
     )
 
-    if product.save
-      render json: product.as_json
-    else
-      render json: {errors: product.errors.full_messages}
-      , status: 422
+    if product.save # happy path
+      @product = product
+      render template: "products/show"
+    else # sad path
+      render json: {errors: product.errors.full_messages}, status: 422
     end 
 
   end 
@@ -37,11 +36,11 @@ class ProductsController < ApplicationController
     product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
 
-    if product.save
-      render json: product.as_json
-    else
-      render json: {errors: product.errors.full_messages}
-      , status: 422
+    if product.save # happy path
+      @product = product
+      render template: "products/show"
+    else # sad path
+      render json: {errors: product.errors.full_messages}, status: 422
     end 
 
   end
