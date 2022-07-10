@@ -8,11 +8,11 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "Fendi Multicolor Viscose Dress",
-  "price": 1850,
-  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuzI8H95Jm68ujYk-A_8xkIIMMK9_oNX1i2w&usqp=CAU",
-  "description": "Short close-fitting dress with high collar and long sleeves. Embellished with ribbed edges. Made of lightweight viscose knit with pastel-shades inlay.
-The Stocking Girls graphics are a tribute to the visionary sensitivity of the fashion illustrator Antonio Lopez: recalling the atmospheres of the disco era and an expression of the free and universal femininity that distinguishes the Fendi spirit."
+  "name": "Miu Sassy Embellished Satin Handbag",
+  "price": 3300,
+  "image_url": "https://www.miumiu.com/content/dam/miumiu_products/5/5BA/5BA200/2DOEF0236/5BA200_2DOE_F0236_V_GR2_SLF.png/jcr:content/renditions/cq5dam.web.hf8f8f8.800.800.jpg",
+  "description": "Simple shapes, sophisticated details. This satin handbag is decorated and illuminated with crystals that create a modern geometric motif.",
+  "supplier": 2
 }
 
 ### Update Action

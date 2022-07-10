@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   validates :description, presence: true, length: { in: 10..500 }
   validates :price, presence: true, numericality: { greater_than: 0 } 
 
-
+  belongs_to :supplier
 
   def friendly_created_at 
     created_at.strftime("%B %e, %Y")
@@ -26,4 +26,6 @@ class Product < ApplicationRecord
   def total 
     price + tax  
   end 
+
+
 end

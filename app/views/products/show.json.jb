@@ -4,7 +4,8 @@
   price: @product.price, 
   image_url: @product.image_url,
   description: @product.description,
-  friendly_created_at: @product.friendly_created_at,
   tax: @product.tax,
-  total: @product.total
+  total: @product.total,
+  supplier: @product.supplier,
+  friendly_created_at: @product.friendly_created_at
 }
