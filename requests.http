@@ -8,10 +8,11 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "ice cream",
-  "price": 1000,
-  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUw4BRSv5KYO47illBY6pKjupBnnqXFEyluI3--QTAh3fU0whERswkeKRi2Bxw6817_Y&usqp=CAU",
-  "description": "call and text; use internet services"
+  "name": "Fendi Multicolor Viscose Dress",
+  "price": 1850,
+  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuzI8H95Jm68ujYk-A_8xkIIMMK9_oNX1i2w&usqp=CAU",
+  "description": "Short close-fitting dress with high collar and long sleeves. Embellished with ribbed edges. Made of lightweight viscose knit with pastel-shades inlay.
+The Stocking Girls graphics are a tribute to the visionary sensitivity of the fashion illustrator Antonio Lopez: recalling the atmospheres of the disco era and an expression of the free and universal femininity that distinguishes the Fendi spirit."
 }
 
 ### Update Action
@@ -19,12 +20,12 @@ PATCH http://localhost:3000/products/1
 Content-Type: application/json
 
 {
-  
-  "price": "1250",
-  "image_url": "beepboop",
-  "description": "newer model"
+  "name": "Medusa Aevitas Platform Pumps",
+  "price": 1575,
+  "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuzI8H95Jm68ujYk-A_8xkIIMMK9_oNX1i2w&usqp=CAU",
+  "description": "A statement runway design, these satin pumps feature a high block heel and a double platform. The ankle strap is adorned with rhinestones and a signature Medusa charm."
 }
 
 
 ### Delete Action
-DELETE http://localhost:3000/products/3
+DELETE http://localhost:3000/products/2
