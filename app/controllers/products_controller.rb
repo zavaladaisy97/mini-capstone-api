@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end 
 
   def show 
-    @product = Product.find_by(id: product_id)
+    @product = Product.find_by(id: params[:id])
     render template: "products/show"
   end 
 
@@ -14,8 +14,8 @@ class ProductsController < ApplicationController
     product = Product.new( 
       name: params[:name], 
       price: params[:price],
-      image_url: params[:image_url],
-      description: params[:description]
+      description: params[:description], 
+      supplier_id: params[:supplier_id]
     )
 
     if product.save # happy path
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
 
   def update
     product_id = params["id"]
-    product = Product.find_by(id: product_id)
+    product = Product.find_by(id: params[:id])
 
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
 
   def destroy
     product_id = params[:id]
-    product = Product.find_by(id: product_id)
+    product = Product.find_by(id: params[:id])
     product.destroy
     render json: {message: "Successfully deleted!"}
   end

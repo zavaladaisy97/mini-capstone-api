@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 } 
 
   belongs_to :supplier
+  has many :images
 
   def friendly_created_at 
     created_at.strftime("%B %e, %Y")
