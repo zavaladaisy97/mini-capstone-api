@@ -29,3 +29,14 @@ Content-Type: application/json
 
 ### Delete Action
 DELETE http://localhost:3000/products/2
+
+### User Create 
+POST http://localhost:3000/users 
+Contact-Type: application/json
+
+{
+  "name": "Daisy Z",
+  "email": "daisy@test.com",
+  "password": "password", 
+  "password_confirmation": "password"
+}
