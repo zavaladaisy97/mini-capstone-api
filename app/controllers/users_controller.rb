@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def create
+    pp params 
+    p "daisy"
     user = User.new(
       name: params[:name],
       email: params[:email],
