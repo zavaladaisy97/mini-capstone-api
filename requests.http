@@ -75,3 +75,20 @@ GET http://localhost:3000/orders/1
 
 ### order index 
 GET http://localhost:3000/orders.json
+
+
+###Carted products create
+POST http://localhost:3000/cartedproducts.json 
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "user_id": 1,
+  "product_id": 2,
+  "quantity": 1, 
+  "order_id": 1:,
+  "status": ""
+}
+
+###Carted products index
+GET http://localhost:3000/
