@@ -4,12 +4,10 @@ class CartedProductsController < ApplicationController
       user_id: current_user.id, 
       product_id: params[:product_id],
       quantity: params[:quantity],
-      order_id: params[:order_id],
       status: "carted"
     )
 
     if carted_product.save # happy path
-      @carted_product = carted_product
       render json: carted_product.as_json 
     else # sad path
       render json: {errors: carted_product.errors.full_messages}, status: 422
@@ -19,7 +17,7 @@ class CartedProductsController < ApplicationController
 
 
   def index 
-    @carted_products = current_user.carted_products 
+    carted_products = current_user.carted_products.where(status: "carted")
     render json: carted_products.as_json
   end 
 
