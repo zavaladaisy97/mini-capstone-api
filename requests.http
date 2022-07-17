@@ -61,14 +61,9 @@ Content-Type: application/json
 }
 
 ###Order create
-POST  http://localhost:3000/orders
-Content-Type: application/json
+POST  http://localhost:3000/orders,json
 Authorization: Bearer {{jwt}}
 
-{
-  "product_id": "1",
-  "quantity": "2",
-}
 
 ### order show
 GET http://localhost:3000/orders/1

@@ -8,6 +8,7 @@ class CartedProductsController < ApplicationController
     )
 
     if carted_product.save # happy path
+      carted_products.update_all(status: "pruchased", order_id: order.id)
       render json: carted_product.as_json 
     else # sad path
       render json: {errors: carted_product.errors.full_messages}, status: 422
