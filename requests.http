@@ -85,3 +85,7 @@ Authorization: Bearer {{jwt}}
 ###Carted products index
 GET http://localhost:3000/carted_products
 Authorization: Bearer {{jwt}}
+
+
+### carted products destroy 
+DELETE http://localhost:3000/carted_products/5
